@@ -14,6 +14,8 @@ public class Aluno {
     private Integer id;
 
     private String nomealuno;
+    private String periodo;
+    private String ano;
 
     @ManyToOne
     @JoinColumn(name="cursoid")
@@ -41,6 +43,22 @@ public class Aluno {
 
     public void setNomealuno(String nomealuno) {
         this.nomealuno = nomealuno;
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+
+    public String getAno() {
+        return ano;
+    }
+
+    public void setAno(String ano) {
+        this.ano = ano;
     }
 
     @Override

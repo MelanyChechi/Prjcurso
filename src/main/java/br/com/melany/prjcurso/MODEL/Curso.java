@@ -1,5 +1,7 @@
 package br.com.melany.prjcurso.MODEL;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,10 @@ public class Curso {
 
     private Integer id;
     private String nomecurso;
+    private String nomecoordenador;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "curso")
     private List<Aluno> alunos = new ArrayList<>();
 
     public Integer getId() {
@@ -33,6 +38,22 @@ public class Curso {
 
     public void setNomecurso(String nomecurso) {
         this.nomecurso = nomecurso;
+    }
+
+    public String getNomecoordenador() {
+        return nomecoordenador;
+    }
+
+    public void setNomecoordenador(String nomecoordenador) {
+        this.nomecoordenador = nomecoordenador;
+    }
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
     }
 
     @Override

@@ -15,11 +15,11 @@ import java.util.List;
 
 public class CursoResource {
 
-    private CursoRepository cursoRepository;
     @Autowired
+    private CursoRepository cursoRepository;
+
 
     @GetMapping("/todos")
-
     public List<Curso> ListarTodosCursos() {
         return cursoRepository.findAll(Sort.by("nomecurso"));
     }
